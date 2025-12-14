@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You 🎵</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+  <h1>Play this 🎶</h1>
+  <p>
+    Hech Song Video madhe aheeee ani ofc tu aikla nahis kiwa durlaksh kelays so<br>
+    Please listen till the end 💖<br>
+    <br>
+    <b>“तेरी आँखों में तारीफों की तलाश है”<br>
+    “मेरी महफ़िल तेरे जाने से वीरान है” <br>
+    “मैं बस शायर बना हूँ सिर्फ तू सुनने आये तो” <br></b>
+    <i>
+        It means I sees in the beloved’s eyes a silent desire to be admired. <br>
+    Life feels empty and lonely without your beloved’s presence babes. <br>
+    I did all these just for youuuu to listenn my side. <br>
+    </i>
+  </p>
+
+  <!-- Single audio element with controls for testing -->
+  <audio id="song" loop controls>
+    <source src="song.mpeg" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Play button -->
+  <button class="secondary" id="playBtn">Tap to Play 🎵</button>
+
+  <!-- Next button -->
+  <button class="secondary" id="nextBtn">Next 🥺</button>
+</div>
+
+<!-- Load global JS for navigation, hearts, etc. -->
+<script src="script.js"></script>
+
+<!-- Page-specific JS -->
+<script>
+  const song = document.getElementById("song");
+  const playBtn = document.getElementById("playBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  // Play music only when user clicks
+  playBtn.addEventListener("click", () => {
+    song.play().then(() => {
+      playBtn.style.display = "none"; // hide button after starting
+    }).catch(err => {
+      console.log("Audio failed to play:", err);
+    });
+  });
+
+  // Navigate to apology page
+  nextBtn.addEventListener("click", () => {
+    go('apology.html'); // uses your fade navigation function
+  });
+</script>
+
+</body>
+</html>
